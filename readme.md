@@ -1,8 +1,8 @@
 # API Bay Admnistrativo
 
-[![GitHub Issues Abertas](https://img.shields.io/github/issues/culturagovbr/siminc2.svg?maxAge=2592000)]() 
-[![GitHub Issues Fechas](https://img.shields.io/github/issues-closed-raw/culturagovbr/siminc2.svg?maxAge=2592000)]()
-<a href="https://app.zenhub.com/workspace/o/culturagovbr/siminc2/boards" target="_blank">
+[![GitHub Issues Abertas](https://img.shields.io/github/issues/cpa-bayarea/api-administrativo.svg?maxAge=2592000)]() 
+[![GitHub Issues Fechas](https://img.shields.io/github/issues-closed-raw/cpa-bayarea/api-administrativo.svg?maxAge=2592000)]()
+<a href="https://app.zenhub.com/workspace/o/cpa-bayarea/api-administrativo/boards" target="_blank">
     <img src="https://img.shields.io/badge/Managed_with-ZenHub-5e60ba.svg" alt="zenhub">
 </a>
 
