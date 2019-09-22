@@ -11,15 +11,22 @@
 |
 */
 
-$router->get('/key', function() {
+/*$router->get('/key', function() {
     return str_random(32);
-});
+});*/
 
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-// $router->group(['middleware' => 'auth'], function () use ($router) {
+$router->post('auth/login', ['uses' => 'AuthController@authenticate']);
+
+$router->group(['middleware' => 'jwt.auth'], function() use ($router) {
+
+/*    $router->get('/users', function() {
+        $users = \App\User::all();
+        return response()->json($users);
+    });*/
 
     $router->get('/users', 'UserController@read');
     $router->get('/user/{userId}', 'UserController@show');
@@ -33,4 +40,5 @@ $router->get('/', function () use ($router) {
     $router->put('/project/{projectId}/update', 'ProjectsController@update');
     $router->delete('/project/{projectId}/delete', 'ProjectsController@delete');
 
-// });
+});
+
