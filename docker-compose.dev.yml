@@ -6,7 +6,7 @@ services:
     image: mysql:5.7
     restart: always
     ports:
-      - "3306:3306"
+      - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: api-bay
@@ -18,7 +18,7 @@ services:
     links:
       - php
     ports:
-      - "80:80"
+      - "81:80"
     depends_on:
       - db
 
@@ -26,7 +26,7 @@ services:
     container_name: php
     build: docker/php
     volumes:
-      - ./lumen:/var/www/html
+      - .:/var/www/html
     working_dir: /var/www/html/app/public
     command: php-fpm
     links:
