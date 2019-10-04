@@ -16,7 +16,7 @@ independentemente do Sistema Operacional(SO) utilizado.
 
 Para criar um ambiente para trabalhar com a API basta executar o comando abaixo:
 ```
-  docker-compose up -d
+  docker-compose -f docker-compose.dev.yml up -d
 ```
 
 Para visualizar detalhes do container
@@ -28,9 +28,9 @@ Para visualizar detalhes do container
 * [PHP](http://php.net/)
 * [Lumen 5.8](https://lumen.laravel.com/docs) 
 * [Docker](https://www.docker.com)
-* [PostgreSQL](https://www.postgresql.org/)
+* [MySQL](https://www.mysql.com)
 
 ## Contribuidores
 Todas as pessoas que colaboraram com o desenvimento do projeto API Bay estão centralizadas em um único local todos os que participaram com o desenvolvimento do projeto.
   
-Clique [aqui](docs/Autores.md) para visualizar.
+Clique [aqui](docs/AUTHORS.md) para visualizar.
