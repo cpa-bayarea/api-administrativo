@@ -21,9 +21,9 @@ $router->get('/', function () use ($router) {
 
 $router->post('auth/login', ['uses' => 'AuthController@authenticate']);
 
-$router->group(['middleware' => 'jwt.auth'], function() use ($router) {
+$router->group(['prefix' => 'api/v1', 'middleware' => 'jwt.auth'], function () use ($router) {
 
-/*    $router->get('/users', function() {
+    /*    $router->get('/users', function() {
         $users = \App\User::all();
         return response()->json($users);
     });*/
@@ -39,6 +39,4 @@ $router->group(['middleware' => 'jwt.auth'], function() use ($router) {
     $router->post('/project', 'ProjectsController@create');
     $router->put('/project/{projectId}/update', 'ProjectsController@update');
     $router->delete('/project/{projectId}/delete', 'ProjectsController@delete');
-
 });
-
