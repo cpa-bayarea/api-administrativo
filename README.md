@@ -36,4 +36,4 @@ Todas as pessoas que colaboraram com o desenvimento do projeto API Bay estão ce
 Clique [aqui](docs/AUTHORS.md) para visualizar.
 
 ## Como Contribuir ?
-Por favor leia o ``` [CONTRIBUTING.md](docs/CONTRIBUTING.md) ``` para detalhes de como contribuir com o projeto.
+Por favor leia o [```CONTRIBUTING.md```](docs/CONTRIBUTING.md) para detalhes de como contribuir com o projeto.
