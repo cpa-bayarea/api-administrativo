@@ -28,15 +28,15 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'jwt.auth'], function () u
         return response()->json($users);
     });*/
 
-    $router->get('/users', 'UserController@read');
-    $router->get('/user/{userId}', 'UserController@show');
-    $router->post('/user', 'UserController@create');
-    $router->put('/user/{userId}/update', 'UserController@update');
-    $router->delete('/user/{userId}/delete', 'UserController@delete');
+    $router->get('/users', 'UserController@index');
+    $router->get('/user/{userId}', 'UserController@edit');
+    $router->post('/user', 'UserController@store');
+    $router->put('/user/{userId}', 'UserController@update');
+    $router->delete('/user/{userId}', 'UserController@delete');
 
-    $router->get('/projects', 'ProjectsController@read');
-    $router->get('/project/{projectId}', 'ProjectsController@show');
-    $router->post('/project', 'ProjectsController@create');
-    $router->put('/project/{projectId}/update', 'ProjectsController@update');
-    $router->delete('/project/{projectId}/delete', 'ProjectsController@delete');
+    $router->get('/projects', 'ProjectsController@index');
+    $router->get('/project/{projectId}', 'ProjectsController@edit');
+    $router->post('/project', 'ProjectsController@store');
+    $router->put('/project/{projectId}', 'ProjectsController@update');
+    $router->delete('/project/{projectId}', 'ProjectsController@delete');
 });
