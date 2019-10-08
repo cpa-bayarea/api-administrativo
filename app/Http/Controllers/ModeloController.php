@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Laravel\Lumen\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Classes\Util;
+use Validator;
 
-class ModeloController extends Controller
+class ModeloController extends BaseController
 {
     protected $_model;
     protected $_modelName;
+    protected $fieldsValidate;
 
     /**
      * AbstractController constructor.
@@ -54,6 +56,14 @@ class ModeloController extends Controller
         if ($id = base64_decode($request->id)) {
             $this->_model = $this->_model->find($id);
         }
+
+        $validator = Validator::make($dados, [
+            $this->fieldsRequired
+        ]);
+        if ($validator->fails()) {
+            throw new \Exception($validator->errors()->first());
+        }
+
         $this->_model->fill($request->toArray());
         $this->_model->save();
         return redirect($this->_redirectSave);
