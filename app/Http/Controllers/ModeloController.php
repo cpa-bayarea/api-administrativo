@@ -31,7 +31,7 @@ class ModeloController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(array $order = null)
     {
         $aItens = $this->_model->all();
 
@@ -41,18 +41,6 @@ class ModeloController extends Controller
         ];
 
         return response()->json($response);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $aDados = $this->_recuperarDados();
-        $aDados['model'] = $this->_model;
-        return view("{$this->_dirView}.formulario", $aDados);
     }
 
     /**
@@ -79,9 +67,15 @@ class ModeloController extends Controller
      */
     public function edit($id)
     {
-        $aDados = $this->_recuperarDados();
-        $aDados['model'] = $this->_model->find(base64_decode($id));
-        return view("{$this->_dirView}.formulario", $aDados);
+        $aEdit = $this->_model->find(base64_decode($id));
+
+        $response = [
+            'data'   => $aEdit,
+            'type'   => 'success',
+            'status' => 200
+        ];
+
+        return response()->json($response);
     }
 
     /**
@@ -94,7 +88,13 @@ class ModeloController extends Controller
     {
         $this->_model = $this->_model->find(base64_decode($id));
         $this->_model->delete();
-        return redirect($this->_redirectDelete);
+
+        $response = [
+            'type'   => 'success',
+            'status' => 200
+        ];
+
+        return response()->json($response);
     }
 
     protected function _recuperarDados()
