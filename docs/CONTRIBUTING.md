@@ -12,6 +12,7 @@ ambientalização do projeto.
 ```bash
 git clone https://github.com/cpa-bayarea/api-administrativo.git bay-api
 cd bay-api
+git checkout -b feature-something
 ...
 ```
 
