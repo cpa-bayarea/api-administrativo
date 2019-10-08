@@ -34,3 +34,6 @@ Para visualizar detalhes do container
 Todas as pessoas que colaboraram com o desenvimento do projeto API Bay estão centralizadas em um único local todos os que participaram com o desenvolvimento do projeto.
   
 Clique [aqui](docs/AUTHORS.md) para visualizar.
+
+## Como Contribuir ?
+Por favor leia o ``` [CONTRIBUTING.md](docs/CONTRIBUTING.md) ``` para detalhes de como contribuir com o projeto.
